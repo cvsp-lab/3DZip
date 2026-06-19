@@ -4,15 +4,15 @@ Official code and project page for **3DZip** (ECCV 2026).
 
 **[Changwoo Baek](https://sites.google.com/view/changwoobaek00/%ED%99%88), [Kyeongbo Kong](https://www.pnu-cvsp.com/prof)†** — Pusan National University
 
-🌐 **Project page:** https://higokri.github.io/3dzip/ &nbsp;·&nbsp; 📄 arXiv: *coming soon* &nbsp;·&nbsp; 💻 Code: this repo
+🌐 **Project page:** https://higokri.github.io/3dzip/ &nbsp;·&nbsp; 📄 arXiv: *coming soon* 
 
 ## Demo
 
 <p align="center">
-  <video src="https://github.com/higokri/3dzip/raw/main/static/videos/teaser.mp4" controls muted loop width="100%"></video>
+  <img src="static/images/teaser.gif" width="100%" alt="3DZip teaser">
 </p>
 
-> If the player does not load, watch the teaser on the [project page](https://higokri.github.io/3dzip/) or download it [here](static/videos/teaser.mp4).
+> Watch the full-quality teaser on the [project page](https://higokri.github.io/3dzip/).
 
 ---
 
