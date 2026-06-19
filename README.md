@@ -113,17 +113,6 @@ bash scripts/eval/eval_scanqa.sh  <pooling> <voxel_size> <target_tokens>   # Sca
 └── pyproject.toml
 ```
 
-## 📖 Citation
-
-```bibtex
-@inproceedings{baek2026threedzip,
-  title     = {3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering},
-  author    = {Baek, Changwoo and Kong, Kyeongbo},
-  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
-  year      = {2026}
-}
-```
-
 ## 🙏 Acknowledgements
 
 This code is built upon [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D); we thank the authors for their excellent work.
