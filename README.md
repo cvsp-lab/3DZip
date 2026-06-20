@@ -4,6 +4,11 @@
 
 🌐 [Project page](https://higokri.github.io/3dzip/) &nbsp;·&nbsp; 📄 arXiv: *coming soon* 
 
+## 📰 News
+
+- **2026-06-20** — 🚀 Code & project page released!
+- **2026-06-18** — 🎉 3DZip is accepted to **ECCV 2026**!
+
 ## ✨ Highlight
 
 https://github.com/user-attachments/assets/5776e4df-a16b-47c9-ad09-e0f909ecd2c8
