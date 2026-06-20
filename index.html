@@ -294,6 +294,20 @@
     </div>
   </section>
 
+  <!-- 2D -> 3D TRANSITION -->
+  <section class="block band">
+    <div class="wrap">
+      <div class="shift reveal">
+        <span class="chip done">2D&nbsp;VLM compression <span class="x">✗ 3D</span><small>extensively studied for images</small></span>
+        <span class="arrow"><i class="fas fa-arrow-right-long"></i></span>
+        <span class="chip now">3D&nbsp;VLM compression ✓<small>geometry-aware, with 3DZip</small></span>
+      </div>
+      <div class="h2 reveal" style="margin-top: 24px;">Token compression was built for 2D.<br><span class="g">Now at 3D!</span></div>
+      <p class="lead reveal" style="margin-top: 6px;">Prior methods compress tokens for 2D VLMs and ignore spatial
+        structure. 3D tokens are geometric and structured — 3DZip is the first to compress them in a geometry-aware way.</p>
+    </div>
+  </section>
+
   <!-- CONTRIBUTIONS -->
   <section class="block">
     <div class="wrap">
@@ -301,9 +315,9 @@
       <div class="h2 reveal">Three takeaways</div>
       <div class="contribs">
         <div class="contrib reveal">
-          <div class="ic"><i class="fas fa-scale-unbalanced"></i></div>
-          <h3>Object-level imbalance</h3>
-          <p>We reveal a severe object-level token imbalance induced by projection-based multi-view aggregation that persists even after spatial aggregation.</p>
+          <div class="ic"><i class="fas fa-clone"></i></div>
+          <h3>Two forms of redundancy</h3>
+          <p>We analyze the redundancy from projection-based multi-view aggregation, decomposing it into <b>point-level redundancy</b> (repeated observations of the same surface) and <b>object-level redundancy</b> (one object spread across many surface tokens).</p>
         </div>
         <div class="contrib reveal">
           <div class="ic"><i class="fas fa-shapes"></i></div>
@@ -316,20 +330,6 @@
           <p>A structured three-stage pipeline: voxel aggregation, feature-diversity anchor selection (DPP), and spatially-constrained merging.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 2D -> 3D TRANSITION -->
-  <section class="block band">
-    <div class="wrap">
-      <div class="shift reveal">
-        <span class="chip done">2D&nbsp;VLM compression <span class="x">✗ 3D</span><small>extensively studied for images</small></span>
-        <span class="arrow"><i class="fas fa-arrow-right-long"></i></span>
-        <span class="chip now">3D&nbsp;VLM compression ✓<small>geometry-aware, with 3DZip</small></span>
-      </div>
-      <div class="h2 reveal" style="margin-top: 24px;">Token compression was built for 2D.<br><span class="g">Now at 3D!</span></div>
-      <p class="lead reveal" style="margin-top: 6px;">Prior methods compress tokens for 2D VLMs and ignore spatial
-        structure. 3D tokens are geometric and structured — 3DZip is the first to compress them in a geometry-aware way.</p>
     </div>
   </section>
 
