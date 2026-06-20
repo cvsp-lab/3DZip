@@ -4,6 +4,8 @@
 
 🌐 [Project page](https://higokri.github.io/3dzip/) &nbsp;·&nbsp; 📄 arXiv: *coming soon* 
 
+*We hope 3DZip serves as a useful base codebase for token pruning in 3D VLMs.*
+
 ## 📰 News
 
 - **2026-06-20** — 🚀 Code & project page released!
@@ -14,8 +16,6 @@
 https://github.com/user-attachments/assets/5776e4df-a16b-47c9-ad09-e0f909ecd2c8
 
 ---
-
-> 💡 **We hope 3DZip can serve as a useful and reproducible base codebase that many researchers can build on for token pruning / compression in 3D VLMs.**
 
 3DZip is a **training-free**, three-stage token compression framework for projection-based 3D vision-language models.
 It removes the redundancy introduced by multi-view aggregation while preserving geometric coherence, retaining
