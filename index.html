@@ -145,6 +145,20 @@
     .contrib p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
     @media (max-width: 820px){ .contribs { grid-template-columns: 1fr; } }
 
+    /* 2D -> 3D transition band */
+    .band { background: linear-gradient(120deg, rgba(99,102,241,0.09), rgba(168,85,247,0.08) 55%, rgba(236,72,153,0.07));
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
+    .shift { display: inline-flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
+    .chip { padding: 14px 22px; border-radius: 14px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow);
+      font-weight: 700; font-size: 1.05rem; line-height: 1.2; }
+    .chip small { display: block; font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); margin-top: 4px; }
+    .chip.done { color: var(--ink-soft); }
+    .chip.done .x { color: #cdd1de; font-weight: 800; }
+    .chip.now { color: #fff; background: var(--ink); border-color: var(--ink); }
+    .chip.now small { color: rgba(255,255,255,0.75); }
+    .shift .arrow { font-size: 1.5rem; color: var(--a1); }
+    @media (max-width: 560px){ .shift .arrow { transform: rotate(90deg); } }
+
     /* figures */
     figure.fig { margin: 30px 0 0; }
     figure.fig .frame {
@@ -301,6 +315,20 @@
           <p>A structured three-stage pipeline: voxel aggregation, feature-diversity anchor selection (DPP), and spatially-constrained merging.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 2D -> 3D TRANSITION -->
+  <section class="block band">
+    <div class="wrap">
+      <div class="shift reveal">
+        <span class="chip done">2D&nbsp;VLM compression <span class="x">✗ 3D</span><small>extensively studied for images</small></span>
+        <span class="arrow"><i class="fas fa-arrow-right-long"></i></span>
+        <span class="chip now">3D&nbsp;VLM compression ✓<small>geometry-aware, with 3DZip</small></span>
+      </div>
+      <div class="h2 reveal" style="margin-top: 24px;">Token compression was built for 2D. <span class="g">Now at 3D.</span></div>
+      <p class="lead reveal" style="margin-top: 6px;">Prior methods compress tokens for 2D VLMs and ignore spatial
+        structure. 3D tokens are geometric and structured — 3DZip is the first to compress them in a geometry-aware way.</p>
     </div>
   </section>
 
