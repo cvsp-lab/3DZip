@@ -160,8 +160,8 @@
     .band .h2 .g { background: none; -webkit-text-fill-color: #7c3aed; color: #7c3aed; }
     .vs { display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; }
     .vs-col { min-width: 180px; }
-    .vs-head { font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.45rem; line-height: 1; }
-    .vs-head.dim { color: #aeb4c4; }
+    .vs-head { font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.2rem; line-height: 1.2; }
+    .vs-head.dim { color: #5a6072; }
     .vs-head.accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 2.1rem; }
     .vs-sub { color: var(--ink-soft); font-size: 0.95rem; font-weight: 600; margin-top: 10px; line-height: 1.4; }
     .m2d { margin-top: 14px; display: flex; flex-direction: column; gap: 3px; align-items: center; }
@@ -309,9 +309,13 @@
   <!-- 2D -> 3D TRANSITION -->
   <section class="block band">
     <div class="wrap">
-      <div class="vs reveal">
+      <div class="h2 reveal">Token compression was built for 2D.<br><span class="g">Now at 3D!</span></div>
+      <p class="lead reveal" style="margin-top: 6px;">These methods compress tokens for 2D VLMs and ignore spatial
+        structure. 3D tokens are geometric and structured — 3DZip compresses them in a geometry-aware way for 3D&nbsp;VLM.</p>
+
+      <div class="vs reveal" style="margin-top: 30px;">
         <div class="vs-col">
-          <div class="vs-head dim">2D&nbsp;VLM</div>
+          <div class="vs-head dim">2D&nbsp;VLM token compression</div>
           <div class="m2d">
             <span class="mline">ToMe <span class="v">ICLR'23</span></span>
             <span class="mline">FastV <span class="v">ECCV'24</span></span>
@@ -332,9 +336,6 @@
           <div class="vs-sub">geometry-aware token<br>compression for 3D&nbsp;VLM</div>
         </div>
       </div>
-      <div class="h2 reveal" style="margin-top: 28px;">Token compression was built for 2D.<br><span class="g">Now at 3D!</span></div>
-      <p class="lead reveal" style="margin-top: 6px;">These methods compress tokens for 2D VLMs and ignore spatial
-        structure. 3D tokens are geometric and structured — 3DZip compresses them in a geometry-aware way for 3D&nbsp;VLM.</p>
     </div>
   </section>
 
