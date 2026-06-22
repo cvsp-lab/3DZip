@@ -30,11 +30,14 @@
     .author-block { display: inline-block; margin: 0 0.6rem; }
     .author-block a { color: hsl(204, 86%, 53%); }
     .conference { color: #003262; font-weight: 700; letter-spacing: 0.02em; }
-    .tldr { max-width: 820px; margin: 0 auto 26px; background: rgba(0,50,98,0.05);
-      border: 1px solid rgba(0,50,98,0.15); border-left: 4px solid #003262; border-radius: 12px;
-      padding: 16px 22px; text-align: left; font-size: 1.05rem; line-height: 1.6; color: #2b2f3d; }
-    .tldr .tag { display: inline-block; font-family: 'Google Sans', sans-serif; font-weight: 800;
-      color: #003262; letter-spacing: 0.05em; margin-right: 8px; }
+    .tldr-box { max-width: 900px; margin: 0 auto 28px; background: #f3f6fb; border: 2px solid #003262;
+      border-radius: 14px; padding: 1.5rem 1.7rem; }
+    .tldr-content { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
+    .tldr-label { background: #003262; color: #fff; font-family: 'Google Sans', sans-serif; font-weight: 800;
+      font-size: 1.02rem; padding: 0.28rem 0.95rem; border-radius: 0.55rem; flex-shrink: 0; letter-spacing: 0.03em; }
+    .tldr-text { flex: 1; min-width: 240px; font-size: 1.18rem; font-weight: 500; line-height: 1.6;
+      color: #2b2f3d; margin: 0; text-align: left; }
+    .tldr-highlight { color: #003262; font-weight: 800; }
 
     /* top nav (svg-project style) */
     .top-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; background: rgba(255,255,255,0.92);
@@ -162,10 +165,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <div class="tldr">
-            <span class="tag">TL;DR</span>Token pruning has so far been explored only for <b>2D VLMs</b>. We analyze the
-            redundancy of projection-based <b>3D VLM</b> tokens and propose <b>3DZip</b> — the first training-free,
-            geometry-aware token compression for 3D VLMs.
+          <div class="tldr-box">
+            <div class="tldr-content">
+              <span class="tldr-label">TL;DR</span>
+              <p class="tldr-text">Token pruning has so far been explored only for <span class="tldr-highlight">2D VLMs</span>.
+                We analyze the redundancy of projection-based <span class="tldr-highlight">3D VLM</span> tokens and propose
+                <span class="tldr-highlight">3DZip</span> — the first training-free, geometry-aware token compression for 3D VLMs.</p>
+            </div>
           </div>
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
@@ -290,8 +296,11 @@
         <div class="column is-full">
           <h2 class="title is-3">Generalization across 3D VLMs</h2>
           <div class="section-figure">
-            <img src="static/images/generalization.png?v=2" alt="Generalization across 3D VLMs: Video-3D-LLM and SR-3D"
-              style="max-width:900px; width:100%;">
+            <div style="background:#fff; border:1px solid #e7e9f2; border-radius:18px; padding:26px;
+              max-width:920px; margin:0 auto; box-shadow:0 12px 34px -18px rgba(0,0,0,0.22);">
+              <img src="static/images/generalization.png?v=2" alt="Generalization across 3D VLMs: Video-3D-LLM and SR-3D"
+                style="width:100%; display:block;">
+            </div>
             <p class="figure-caption has-text-justified" style="max-width:900px; margin-left:auto; margin-right:auto;">
               <b>Generalization across projection-based 3D VLMs.</b> 3DZip is applied after 3D token construction
               without modifying the backbone, and consistently outperforms all baselines on <b>Video-3D-LLM</b> and
