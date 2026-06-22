@@ -53,6 +53,7 @@
     .link-block .button { margin: 0.25rem; }
     .link-block .button[disabled] { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
     .section-figure img { border-radius: 6px; }
+    .figframe { box-shadow: 0 10px 30px -16px rgba(0,0,0,0.22); }
     .figure-caption { color: #555; font-size: 0.95rem; margin-top: 0.6rem; }
     pre.bibtex { background: #f5f5f5; border-radius: 6px; padding: 1.25rem; overflow-x: auto; }
     .teaser-wrap { max-width: 1000px; margin: 0 auto; }
@@ -207,7 +208,7 @@
         <div class="column is-full">
           <h2 class="title is-3">Preliminary: Projection-based 3D VLMs</h2>
           <div class="section-figure">
-            <img src="static/images/construction.png" alt="Geometry-aware 3D token construction">
+            <img src="static/images/construction.png" alt="Geometry-aware 3D token construction" class="figframe">
             <p class="figure-caption has-text-justified">
               <b>Geometry-aware 3D token construction.</b> Multi-view RGB-D inputs are projected into world coordinates
               to form geometry-aware 3D tokens via 3D positional embedding. The large token cardinality
@@ -226,7 +227,7 @@
         <div class="column is-full">
           <h2 class="title is-3">Method</h2>
           <div class="section-figure">
-            <img src="static/images/pipeline.png" alt="3DZip three-stage pipeline">
+            <img src="static/images/pipeline.png" alt="3DZip three-stage pipeline" class="figframe">
             <p class="figure-caption has-text-justified">
               <b>Overview of the proposed three-stage token compression pipeline.</b> Given geometry-aware 3D tokens
               &#119985;, we first apply coarse <b>voxelization</b> to obtain a spatially reduced set, then perform
@@ -284,7 +285,7 @@
           <h2 class="title is-3">Results</h2>
           <div class="section-figure">
             <img src="static/images/main-results.png" alt="Main results on 3D question answering benchmarks"
-              style="max-width:760px; width:100%;">
+              class="figframe" style="max-width:760px; width:100%;">
             <p class="figure-caption has-text-justified" style="max-width:760px; margin-left:auto; margin-right:auto;">
               <b>Main results on three 3D question answering benchmarks</b> (ScanQA, SQA3D, OpenEQA). Under matched
               token budgets (128 / 64 / 32 tokens), 3DZip consistently outperforms prior 2D token compression methods.
