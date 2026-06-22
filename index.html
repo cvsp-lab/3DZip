@@ -30,8 +30,8 @@
     .author-block { display: inline-block; margin: 0 0.6rem; }
     .author-block a { color: hsl(204, 86%, 53%); }
     .conference { color: #003262; font-weight: 700; letter-spacing: 0.02em; }
-    .tldr-box { max-width: 900px; margin: 0 auto 28px; background: #f3f6fb; border: 2px solid #003262;
-      border-radius: 14px; padding: 1.5rem 1.7rem; }
+    .tldr-box { max-width: none; margin: 0 auto 30px; background: #f3f6fb; border: 2px solid #003262;
+      border-radius: 14px; padding: 1.5rem 1.9rem; }
     .tldr-content { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
     .tldr-label { background: #003262; color: #fff; font-family: 'Google Sans', sans-serif; font-weight: 800;
       font-size: 1.02rem; padding: 0.28rem 0.95rem; border-radius: 0.55rem; flex-shrink: 0; letter-spacing: 0.03em; }
@@ -163,8 +163,8 @@
   <!-- ===================== ABSTRACT ===================== -->
   <section class="section" id="abstract">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+      <div class="columns is-centered">
+        <div class="column is-full">
           <div class="tldr-box">
             <div class="tldr-content">
               <span class="tldr-label">TL;DR</span>
@@ -173,6 +173,10 @@
                 <span class="tldr-highlight">3DZip</span> — the first training-free, geometry-aware token compression for 3D VLMs.</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
@@ -254,8 +258,11 @@
         <div class="column is-full">
           <h2 class="title is-3">Why feature diversity matters</h2>
           <div class="section-figure">
-            <img src="static/images/coverage.png" alt="Object-level token allocation across selection strategies"
-              style="border-radius: 18px; border: 1px solid #e7e9f2; box-shadow: 0 10px 30px -16px rgba(0,0,0,0.25);">
+            <div style="background:#fff; border:1px solid #e7e9f2; border-radius:18px; padding:14px;
+              display:inline-block; box-shadow:0 10px 30px -16px rgba(0,0,0,0.22);">
+              <img src="static/images/coverage.png" alt="Object-level token allocation across selection strategies"
+                style="display:block; width:100%; border-radius:8px;">
+            </div>
             <p class="figure-caption has-text-justified">
               <b>Object-level token allocation across selection strategies on the full SQA3D test scenes.</b>
               Per-object token counts for 1,729 foreground object instances across 67 ScanNet scenes. The voxel-only
