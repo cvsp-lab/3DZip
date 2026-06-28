@@ -22,8 +22,8 @@
     :root {
       --primary: #000;
       --secondary: #333;
-      --accent: #7155ae;
-      --accent-bg: #f5f7ff;
+      --accent: #2f6fe0;
+      --accent-bg: #eef4fd;
       --text: #2d3748;
       --light-text: #4a5568;
       --bg: #ffffff;
@@ -40,7 +40,7 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 22px; }
-    .gradient-text { background: linear-gradient(45deg, #5d2fbf, #06c29c); -webkit-background-clip: text;
+    .gradient-text { background: linear-gradient(45deg, #2f6fe0, #06c29c); -webkit-background-clip: text;
       background-clip: text; color: transparent; font-weight: 700; }
 
     /* header */
@@ -94,7 +94,7 @@
     .prose { font-size: 1.05rem; color: var(--text); }
 
     /* TL;DR callout */
-    .tldr { background: var(--accent-bg); border: 1px solid #e3e4f3; border-left: 5px solid var(--accent);
+    .tldr { background: var(--accent-bg); border: 1px solid #d7e4f7; border-left: 5px solid var(--accent);
       border-radius: 12px; padding: 20px 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     .tldr .tag { background: var(--accent); color: #fff; font-family: 'Varela Round'; font-weight: 700;
       padding: 5px 16px; border-radius: 9px; flex-shrink: 0; }
@@ -117,7 +117,7 @@
     @media (max-width: 820px){ .grid3 { grid-template-columns: 1fr; } }
     .feat { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
     .feat .ic { width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; color: #fff;
-      font-size: 1.3rem; background: linear-gradient(135deg, #6f63d8, #4aa3d8); margin-bottom: 14px; }
+      font-size: 1.3rem; background: linear-gradient(135deg, #2f6fe0, #4aa3d8); margin-bottom: 14px; }
     .feat h3 { margin: 0 0 8px; font-size: 1.25rem; }
     .feat p { margin: 0; color: var(--light-text); font-size: 1.02rem; }
 
@@ -127,7 +127,7 @@
     .stat { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
       text-align: center; padding: 26px 16px; }
     .stat .num { font-family: 'Varela Round'; font-size: clamp(2rem, 5vw, 2.8rem);
-      background: linear-gradient(45deg, #5d2fbf, #06c29c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      background: linear-gradient(45deg, #2f6fe0, #06c29c); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .stat .lbl { color: var(--light-text); margin-top: 8px; font-size: 0.95rem; }
 
     /* qualitative slider */
@@ -371,9 +371,10 @@
     <div class="container">
       <p style="margin: 0 0 8px;"><b>3DZip</b> · ECCV 2026 · Pusan National University &middot;
         <a href="https://github.com/cvsp-lab/3DZip" target="_blank">Code</a></p>
-      <p style="margin: 0;">Page design inspired by
-        <a href="https://cvlab-kaist.github.io/WorldKV/" target="_blank">WorldKV</a>. Licensed under
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
+      <p style="margin: 0;">Credit: The design of this project page is inspired by previous academic project pages, such as
+        <a href="https://cvlab-kaist.github.io/WorldKV/" target="_blank">WorldKV</a>,
+        <a href="https://llm-grounded-diffusion.github.io/" target="_blank">LLM-grounded Diffusion</a>, and
+        <a href="https://describe-anything.github.io/" target="_blank">Describe-anything</a>.</p>
     </div>
   </footer>
 
