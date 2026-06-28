@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -404,7 +404,7 @@
         if (btn) btn.innerHTML = t === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
       };
       const saved = localStorage.getItem('theme');
-      set(saved || 'dark');
+      set(saved || 'light');
       if (btn) btn.addEventListener('click', () => {
         const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', t); set(t);
