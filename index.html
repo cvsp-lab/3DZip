@@ -32,10 +32,29 @@
       --light-text: #4a5568;
       --bg: #ffffff;
       --light-bg: #f7fafc;
+      --surface: #ffffff;
       --border: #e2e8f0;
       --shadow: 0 5px 15px rgba(0,0,0,0.1), 0 5px 20px rgba(0,0,0,0.05);
       --radius: 14px;
     }
+    html[data-theme="dark"] {
+      --primary: #f4f6fa;
+      --secondary: #c2c8d2;
+      --accent: #5b9bf6;
+      --accent-bg: rgba(91,155,246,0.12);
+      --text: #d8dce4;
+      --light-text: #9aa2b0;
+      --bg: #0f1115;
+      --light-bg: #161a21;
+      --surface: #1a1f29;
+      --border: #2a3039;
+      --shadow: 0 6px 20px rgba(0,0,0,0.55);
+    }
+    html[data-theme="dark"] .site-header { background: rgba(15,17,21,0.92);
+      border-bottom: 1px solid #232833; box-shadow: 0 2px 10px rgba(0,0,0,0.4); }
+    .nav-toggle { background: none; border: none; cursor: pointer; color: var(--primary);
+      font-size: 1rem; font-weight: 600; padding: 0; font-family: inherit; line-height: 1; }
+    .nav-toggle:hover { color: var(--accent); }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body { margin: 0; background: var(--bg); color: var(--text);
@@ -60,7 +79,7 @@
     @media (max-width: 760px){ .nav-links li { margin: 0 9px; } .nav-links a { font-size: 0.82rem; } }
 
     /* hero */
-    .hero-section { padding: 110px 0 36px; background: #ffffff; text-align: center; }
+    .hero-section { padding: 110px 0 36px; background: var(--bg); text-align: center; }
     .hero-section .title { font-size: clamp(2rem, 4.6vw, 3.1rem); font-weight: 700; line-height: 1.2; margin: 0 auto 10px; max-width: 920px; }
     .title-cube { margin-right: 0.45rem; font-size: 0.92em; }
     .hero-section .subtitle { font-size: 1.55rem; font-weight: 900; color: var(--accent); margin: 0 0 18px;
@@ -97,7 +116,7 @@
     .prose { font-size: 1.05rem; color: var(--text); }
 
     /* TL;DR callout */
-    .tldr { background: var(--accent-bg); border: 1px solid #d7e4f7; border-left: 5px solid var(--accent);
+    .tldr { background: var(--accent-bg); border: 1px solid var(--border); border-left: 5px solid var(--accent);
       border-radius: 12px; padding: 20px 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     .tldr .tag { background: var(--accent); color: #fff; font-family: 'Varela Round'; font-weight: 700;
       padding: 5px 16px; border-radius: 9px; flex-shrink: 0; }
@@ -105,7 +124,7 @@
     .tldr b { color: var(--accent); }
 
     /* cards / figures */
-    .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 30px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 30px; }
     figure.fig { margin: 26px 0 0; text-align: center; }
     .frame { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
       padding: 16px; display: inline-block; max-width: 100%; cursor: zoom-in; transition: transform .2s; }
@@ -136,14 +155,14 @@
     /* qualitative slider */
     .slider { max-width: 860px; margin: 26px auto 0; }
     .ds-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 18px; flex-wrap: wrap; }
-    .ds-tab { padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border); background: #fff; cursor: pointer;
+    .ds-tab { padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); cursor: pointer;
       font-weight: 600; font-size: 0.92rem; color: var(--light-text); font-family: 'Open Sans'; }
     .ds-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
     .slide { display: none; } .slide.active { display: block; }
     .slide img { max-width: 100%; max-height: 78vh; width: auto; display: block; margin: 0 auto;
       border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow); }
     .slider-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
-    .slider-nav button { border: 1px solid var(--border); background: #fff; border-radius: 999px; width: 42px; height: 42px;
+    .slider-nav button { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; width: 42px; height: 42px;
       cursor: pointer; font-size: 1.05rem; color: var(--secondary); }
     .slider-nav button:hover { background: var(--light-bg); }
     .dots { display: flex; gap: 8px; }
@@ -180,6 +199,7 @@
           <li><a href="#generalization">Generalization</a></li>
           <li><a href="#qualitative">Qualitative</a></li>
           <li><a href="https://github.com/cvsp-lab/3DZip" target="_blank">Code</a></li>
+          <li><button id="theme-toggle" class="nav-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></li>
         </ul>
       </nav>
     </div>
@@ -374,6 +394,22 @@
   <div class="lb" id="lb"><img alt=""></div>
 
   <script>
+    // dark / light theme toggle
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      const set = (t) => {
+        root.dataset.theme = t;
+        if (btn) btn.innerHTML = t === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      };
+      const saved = localStorage.getItem('theme');
+      set(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      if (btn) btn.addEventListener('click', () => {
+        const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', t); set(t);
+      });
+    })();
+
     // reveal on scroll
     const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
