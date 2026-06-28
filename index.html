@@ -234,42 +234,11 @@
         </div>
       </div>
 
-      <div class="stats" style="max-width: 860px; margin: 34px auto 0;">
-        <div class="stat reveal"><div class="num">128</div><div class="lbl">tokens per scene</div></div>
-        <div class="stat reveal"><div class="num">94.7%</div><div class="lbl">of original performance</div></div>
-        <div class="stat reveal"><div class="num">1.92×</div><div class="lbl">faster inference</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTRIBUTIONS -->
-  <section class="section alt">
-    <div class="container">
-      <div class="eyebrow reveal">Contributions</div>
-      <h2 class="reveal">Three takeaways</h2>
-      <div class="grid3">
-        <div class="feat reveal">
-          <div class="ic"><i class="fas fa-clone"></i></div>
-          <h3>Two forms of redundancy</h3>
-          <p>We analyze the redundancy from projection-based multi-view aggregation, decomposing it into <b>point-level</b>
-            (repeated observations of the same surface) and <b>object-level</b> redundancy (one object across many surface tokens).</p>
-        </div>
-        <div class="feat reveal">
-          <div class="ic"><i class="fas fa-shapes"></i></div>
-          <h3>Diversity over proximity</h3>
-          <p>Spatial grouping alone cannot resolve it — feature-level diversity is crucial for balancing object coverage in multi-view 3D scenes.</p>
-        </div>
-        <div class="feat reveal">
-          <div class="ic"><i class="fas fa-layer-group"></i></div>
-          <h3>3DZip framework</h3>
-          <p>A structured three-stage pipeline: voxel aggregation, feature-diversity anchor selection (DPP), and spatially-constrained merging.</p>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- PRELIMINARY -->
-  <section class="section">
+  <section class="section alt">
     <div class="container">
       <div class="eyebrow reveal">Preliminary</div>
       <h2 class="reveal">Projection-based 3D VLMs</h2>
@@ -283,7 +252,7 @@
   </section>
 
   <!-- METHOD -->
-  <section class="section alt" id="method">
+  <section class="section" id="method">
     <div class="container">
       <div class="eyebrow reveal">Method</div>
       <h2 class="reveal">A three-stage compression pipeline</h2>
@@ -307,7 +276,7 @@
   </section>
 
   <!-- ANALYSIS -->
-  <section class="section">
+  <section class="section alt">
     <div class="container">
       <div class="eyebrow reveal">Analysis</div>
       <h2 class="reveal">Why feature diversity matters</h2>
@@ -323,7 +292,7 @@
   </section>
 
   <!-- RESULTS -->
-  <section class="section alt" id="results">
+  <section class="section" id="results">
     <div class="container">
       <div class="eyebrow reveal">Results</div>
       <h2 class="reveal">State-of-the-art under every token budget</h2>
@@ -337,7 +306,7 @@
   </section>
 
   <!-- GENERALIZATION -->
-  <section class="section" id="generalization">
+  <section class="section alt" id="generalization">
     <div class="container">
       <div class="eyebrow reveal">Generalization</div>
       <h2 class="reveal">Works across different 3D VLM backbones</h2>
@@ -351,7 +320,7 @@
   </section>
 
   <!-- QUALITATIVE -->
-  <section class="section alt" id="qualitative">
+  <section class="section" id="qualitative">
     <div class="container">
       <div class="eyebrow reveal">Qualitative</div>
       <h2 class="reveal">What 3DZip keeps</h2>
