@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -403,7 +403,7 @@
         if (btn) btn.innerHTML = t === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
       };
       const saved = localStorage.getItem('theme');
-      set(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      set(saved || 'dark');
       if (btn) btn.addEventListener('click', () => {
         const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', t); set(t);
