@@ -57,20 +57,25 @@
     /* hero */
     .hero-section { padding: 110px 0 36px; background: linear-gradient(to bottom, #f9f9ff 0%, #ffffff 100%); text-align: center; }
     .hero-section .title { font-size: clamp(2rem, 4.6vw, 3.1rem); font-weight: 700; line-height: 1.2; margin: 0 auto 10px; max-width: 920px; }
-    .hero-section .subtitle { font-size: 1.4rem; font-weight: 700; color: var(--accent); margin: 0 0 18px; }
+    .hero-section .subtitle { font-size: 1.45rem; font-weight: 700; color: var(--primary); margin: 0 0 18px; }
     .author-line { margin: 14px 0 4px; }
-    .author-line a { color: var(--primary); font-size: 1.18rem; font-weight: 600; }
+    .author-line a { color: var(--primary); font-size: 1.25rem; font-weight: 600; }
     .author-line a:hover { color: var(--accent); text-decoration: none; }
-    .affil { color: var(--light-text); font-size: 1rem; margin-top: 8px; }
-    .affil .email { font-size: 0.85rem; color: #94a0b8; }
-    .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
-    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 22px; border-radius: 999px;
-      font-weight: 600; font-size: 0.98rem; transition: transform .15s, box-shadow .15s, opacity .15s; }
-    .btn:hover { text-decoration: none; transform: translateY(-2px); }
-    .btn-grad { background: linear-gradient(135deg, #6f63d8, #4aa3d8); color: #fff; box-shadow: var(--shadow); }
-    .btn-dark { background: var(--primary); color: #fff; }
-    .btn-disabled { background: #eef0f6; color: #aab; cursor: not-allowed; pointer-events: none; }
-    .hint { margin-top: 12px; color: #9aa0b2; font-size: 0.82rem; }
+    .affil { color: var(--light-text); font-size: 1.05rem; margin-top: 10px; }
+    .affil .email { font-size: 0.88rem; color: #94a0b8; }
+
+    /* hero icon links (WorldKV style) */
+    .link-labels { display: flex; flex-wrap: wrap; justify-content: center; margin: 2.4rem 0 0; }
+    .icon-col { margin: 0 22px; text-align: center; }
+    .link-block { display: block; text-decoration: none; transition: all .3s ease; }
+    .link-block:hover { text-decoration: none; }
+    .main-icon { color: var(--primary); font-size: 56px; transition: all .3s ease; display: inline-block; }
+    .link-block:hover .main-icon { color: var(--accent); transform: translateY(-5px); }
+    .link-labels-text { display: block; color: var(--accent); font-weight: 700; font-size: 1rem; margin-top: 0.6rem; }
+    .link-block.disabled { cursor: not-allowed; pointer-events: none; }
+    .link-block.disabled .main-icon { color: #c2c8d4; }
+    .link-block.disabled .link-labels-text { color: #aab; }
+    .hint { margin-top: 14px; color: #9aa0b2; font-size: 0.82rem; }
 
     /* teaser */
     .teaser { max-width: 980px; margin: 26px auto 0; }
@@ -192,10 +197,19 @@
         <span class="email">{higok18, kbkong}@pusan.ac.kr &middot; <sup>&dagger;</sup>Corresponding author</span>
       </div>
 
-      <div class="cta">
-        <a class="btn btn-disabled" title="Coming soon"><i class="ai ai-arxiv"></i> arXiv</a>
-        <a class="btn btn-grad" href="https://github.com/cvsp-lab/3DZip" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a class="btn btn-dark" href="#method"><i class="fas fa-diagram-project"></i> Method</a>
+      <div class="link-labels">
+        <div class="icon-col">
+          <a class="link-block disabled" title="Coming soon">
+            <i class="ai ai-arxiv main-icon"></i>
+            <strong class="link-labels-text">arXiv</strong>
+          </a>
+        </div>
+        <div class="icon-col">
+          <a class="link-block" href="https://github.com/cvsp-lab/3DZip" target="_blank">
+            <i class="fab fa-github main-icon"></i>
+            <strong class="link-labels-text">Code</strong>
+          </a>
+        </div>
       </div>
       <div class="hint">arXiv coming soon</div>
 
