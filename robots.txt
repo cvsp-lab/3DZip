@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paper.pnu-cvsp.com/3DZip/sitemap.xml
