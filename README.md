@@ -2,7 +2,7 @@
   <img src="static/images/logo.png" width="312" alt="3DZip logo">
 </p>
 
-<h1 align="center">[ECCV 2026] 3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering</h1>
+<h1 align="center">[ECCV 2026] 3DZip⚡: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering</h1>
 
 <p align="center">
   <a href="https://sites.google.com/view/changwoobaek00/%ED%99%88">Changwoo Baek</a> &nbsp;·&nbsp;
