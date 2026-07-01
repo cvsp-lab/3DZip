@@ -122,14 +122,14 @@
     .affil { color: var(--light-text); font-size: 1.05rem; margin-top: 10px; }
     .affil .email { font-size: 0.88rem; color: #94a0b8; }
 
-    /* hero pill buttons (from backup) */
+    /* hero badge buttons (label | value) */
     .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 2.2rem; }
-    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 24px; border-radius: 999px;
-      font-weight: 600; font-size: 1rem; transition: transform .15s, background .2s, box-shadow .15s; }
-    .btn:hover { text-decoration: none; transform: translateY(-2px); }
-    .btn-dark { background: #363636; color: #fff; box-shadow: var(--shadow); }
-    .btn-dark:hover { background: var(--accent); }
-    .btn-disabled { background: #363636; color: #fff; opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+    .badge-btn { display: inline-flex; border-radius: 7px; overflow: hidden; font-weight: 700; font-size: 0.92rem;
+      box-shadow: var(--shadow); text-decoration: none; transition: transform .15s; }
+    .badge-btn:hover { transform: translateY(-2px); text-decoration: none; }
+    .badge-btn span { padding: 9px 15px; display: inline-flex; align-items: center; gap: 7px; color: #fff; white-space: nowrap; }
+    .badge-btn .l { background: #4b5563; }
+    .badge-btn.disabled { pointer-events: none; opacity: 0.8; }
     .hint { margin-top: 12px; color: #9aa0b2; font-size: 0.82rem; }
 
     /* teaser */
@@ -254,10 +254,19 @@
       </div>
 
       <div class="cta">
-        <a class="btn btn-disabled" title="Coming soon"><i class="fas fa-file-lines"></i> Paper</a>
-        <a class="btn btn-dark" href="https://github.com/cvsp-lab/3DZip" target="_blank"><i class="fab fa-github"></i> Code</a>
+        <a class="badge-btn disabled" title="Coming soon">
+          <span class="l"><i class="fas fa-file-lines"></i> Paper</span>
+          <span class="v" style="background:#b31b1b;">Coming Soon</span>
+        </a>
+        <a class="badge-btn" href="https://github.com/cvsp-lab/3DZip" target="_blank">
+          <span class="l"><i class="fab fa-github"></i> Code</span>
+          <span class="v" style="background:#181717;">GitHub</span>
+        </a>
+        <a class="badge-btn" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+          <span class="l"><i class="fas fa-scale-balanced"></i> License</span>
+          <span class="v" style="background:#6b7280;">CC BY-NC-SA 4.0</span>
+        </a>
       </div>
-      <div class="hint">Paper coming soon</div>
 
       <div class="teaser reveal">
         <video id="teaser-video" muted playsinline>

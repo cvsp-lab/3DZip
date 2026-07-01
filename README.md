@@ -1,11 +1,16 @@
-# [ECCV 2026] 3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering
+<h1 align="center">[ECCV 2026] 3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering</h1>
 
-**[Changwoo Baek](https://sites.google.com/view/changwoobaek00/%ED%99%88), [Kyeongbo Kong](https://www.pnu-cvsp.com/prof)†** 
+<p align="center">
+  <a href="https://sites.google.com/view/changwoobaek00/%ED%99%88">Changwoo Baek</a> &nbsp;·&nbsp;
+  <a href="https://www.pnu-cvsp.com/prof">Kyeongbo Kong</a><sup>†</sup>
+</p>
 
-[![arXiv](https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?logo=arxiv&logoColor=white)](https://paper.pnu-cvsp.com/3DZip/)
-[![Website](https://img.shields.io/badge/Website-3DZip-1e3a8a?logo=googlechrome&logoColor=white)](https://paper.pnu-cvsp.com/3DZip/)
-[![Code](https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white)](https://github.com/cvsp-lab/3DZip)
-[![License](https://img.shields.io/badge/License-LLaVA--3D-4c8bf5)](https://github.com/ZCMax/LLaVA-3D)
+<p align="center">
+  <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
+  <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/Website-3DZip-1e3a8a?logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://github.com/cvsp-lab/3DZip"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white" alt="Code"></a>
+  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey" alt="License"></a>
+</p>
 
 ## 📰 News
 
@@ -135,4 +140,6 @@ adapted from [Nerfies](https://nerfies.github.io).
 
 ## 📄 License
 
-This project follows the license of [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D).
+This project follows the license of [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D), released under
+[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial). The underlying code
+inherits the Apache-2.0 license from LLaVA.
