@@ -9,7 +9,7 @@
   <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
   <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/%F0%9F%8C%90_Website-3DZip-4a90d9" alt="Website"></a>
   <a href="https://github.com/cvsp-lab/3DZip"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white" alt="Code"></a>
-  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey" alt="License"></a>
+  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-4caf50" alt="License"></a>
 </p>
 
 ## 📰 News
