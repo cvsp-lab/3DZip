@@ -2,7 +2,10 @@
 
 **[Changwoo Baek](https://sites.google.com/view/changwoobaek00/%ED%99%88), [Kyeongbo Kong](https://www.pnu-cvsp.com/prof)†** 
 
-🌐 [Project page](https://paper.pnu-cvsp.com/3DZip/) &nbsp;·&nbsp; 📄 arXiv: *coming soon* 
+[![arXiv](https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?logo=arxiv&logoColor=white)](https://paper.pnu-cvsp.com/3DZip/)
+[![Website](https://img.shields.io/badge/Website-3DZip-1e3a8a?logo=googlechrome&logoColor=white)](https://paper.pnu-cvsp.com/3DZip/)
+[![Code](https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white)](https://github.com/cvsp-lab/3DZip)
+[![License](https://img.shields.io/badge/License-LLaVA--3D-4c8bf5)](https://github.com/ZCMax/LLaVA-3D)
 
 ## 📰 News
 
