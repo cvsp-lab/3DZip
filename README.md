@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  Pusan National University
+</p>
+
+<p align="center">
   <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
   <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/%F0%9F%8C%90_Website-3DZip-4a90d9" alt="Website"></a>
   <a href="https://github.com/cvsp-lab/3DZip"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white" alt="Code"></a>
