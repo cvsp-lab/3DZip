@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="static/images/logo.png" width="240" alt="3DZip logo">
+</p>
+
 <h1 align="center">[ECCV 2026] 3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering</h1>
 
 <p align="center">
