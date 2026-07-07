@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/images/logo_v8.png" width="520" alt="3DZip logo">
+  <img src="docs/static/images/logo_v8.png" width="520" alt="3DZip logo">
 </p>
 
 <h1 align="center">[ECCV 2026] 3DZip⚡: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering</h1>
@@ -132,8 +132,9 @@ bash scripts/eval/eval_scanqa.sh  <pooling> <voxel_size> <target_tokens>   # Sca
 
 ```
 .
-├── index.html              # Project page (served at paper.pnu-cvsp.com/3DZip)
-├── static/                 # Project-page assets (figures, teaser video)
+├── docs/                   # Project page (served at paper.pnu-cvsp.com/3DZip via GitHub Pages)
+│   ├── index.html
+│   └── static/             # Page assets (figures, teaser video, logo)
 ├── llava/                  # LLaVA-3D + 3DZip implementation
 │   └── model/multimodal_encoder/video_encoder.py   # core 3DZip algorithm
 ├── playground/data/        # Evaluation annotations (ScanQA, SQA3D)
