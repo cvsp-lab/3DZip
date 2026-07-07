@@ -19,6 +19,7 @@
   <a href="https://github.com/cvsp-lab/3DZip"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white" alt="Code"></a>
   <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-Coming_Soon-FFD21E?labelColor=555" alt="Hugging Face"></a>
   <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-4caf50" alt="License"></a>
+  <a href="https://github.com/cvsp-lab/3DZip/stargazers"><img src="https://img.shields.io/github/stars/cvsp-lab/3DZip?style=flat&logo=github&logoColor=white&label=Stars&color=FFD700" alt="GitHub stars"></a>
 </p>
 
 ## 📰 News
