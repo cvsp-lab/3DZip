@@ -107,7 +107,27 @@
     .nav-links li { margin: 0 34px; }
     .nav-links a { color: var(--primary); font-size: 0.98rem; font-weight: 600; transition: color .2s; }
     .nav-links a:hover { color: var(--accent); text-decoration: none; }
-    @media (max-width: 760px){ .nav-links li { margin: 0 9px; } .nav-links a { font-size: 0.82rem; } }
+    @media (max-width: 760px){ .nav-links li { margin: 0 9px; } .nav-links a, .nav-dropdown .dd-trigger { font-size: 0.82rem; } }
+
+    /* nav dropdown */
+    .nav-dropdown { position: relative; }
+    .dd-trigger { cursor: pointer; color: var(--primary); font-weight: 600; font-size: 0.98rem;
+      display: inline-flex; align-items: center; gap: 6px; transition: color .2s; user-select: none; }
+    .dd-trigger:hover, .nav-dropdown.open .dd-trigger { color: var(--accent); }
+    .dd-caret { font-size: 0.7em; transition: transform .2s; }
+    .nav-dropdown:hover .dd-caret, .nav-dropdown.open .dd-caret { transform: rotate(180deg); }
+    .dropdown-menu { position: absolute; top: 100%; left: 50%; margin: 0; padding: 6px; list-style: none;
+      min-width: 190px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-6px);
+      transition: opacity .15s ease, transform .15s ease; z-index: 1001; }
+    .dropdown-menu::before { content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu li { margin: 0; }
+    .dropdown-menu a { display: block; padding: 9px 14px; border-radius: 7px; color: var(--text);
+      font-size: 0.92rem; font-weight: 600; white-space: nowrap; }
+    .dropdown-menu a:hover { background: var(--light-bg); color: var(--accent); text-decoration: none; }
+    .dd-venue { color: var(--light-text); font-weight: 500; font-size: 0.82em; margin-left: 4px; }
 
     /* hero */
     .hero-section { padding: 110px 0 36px; background: var(--bg); text-align: center; }
@@ -231,7 +251,12 @@
           <li><a href="#generalization">Generalization</a></li>
           <li><a href="#qualitative">Qualitative</a></li>
           <li><a href="https://github.com/cvsp-lab/3DZip" target="_blank"><i class="fab fa-github"></i> Code</a></li>
-          <li><a href="https://paper.pnu-cvsp.com/AgilePruner/" target="_blank">Other Efficient AI <i class="fas fa-arrow-up-right-from-square" style="font-size:0.78em;"></i></a></li>
+          <li class="nav-dropdown">
+            <span class="dd-trigger" tabindex="0">Other Efficient AI <i class="fas fa-chevron-down dd-caret"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="https://paper.pnu-cvsp.com/AgilePruner/" target="_blank">AgilePruner <span class="dd-venue">ICLR'26</span></a></li>
+            </ul>
+          </li>
           <li><button id="theme-toggle" class="nav-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></li>
         </ul>
       </nav>
@@ -450,6 +475,16 @@
         const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', t); set(t);
       });
+    })();
+
+    // nav dropdown (click toggle for touch / a11y; hover handled by CSS)
+    (function () {
+      const dd = document.querySelector('.nav-dropdown');
+      const trg = dd && dd.querySelector('.dd-trigger');
+      if (!dd || !trg) return;
+      trg.addEventListener('click', (e) => { e.stopPropagation(); dd.classList.toggle('open'); });
+      trg.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dd.classList.toggle('open'); } });
+      document.addEventListener('click', () => dd.classList.remove('open'));
     })();
 
     // reveal on scroll
