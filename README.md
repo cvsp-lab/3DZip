@@ -13,9 +13,6 @@
   Pusan National University
 </p>
 
-<p align="center">
-  If you like <b>3DZip</b>, please give us a star ⭐ on <a href="https://github.com/cvsp-lab/3DZip">GitHub</a> for the latest updates.
-</p>
 
 <p align="center">
   <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
