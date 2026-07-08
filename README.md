@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/static/images/logo_v9.png" width="240" alt="3DZip logo">
+  <img src="docs/static/images/logo_v10.png" width="360" alt="3DZip logo">
 </p>
 
 <h1 align="center">[ECCV 2026] 3DZip⚡: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering</h1>
