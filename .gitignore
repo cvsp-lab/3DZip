@@ -3,3 +3,5 @@
 *.pdf
 extracted/
 annotations/*.json
+__pycache__/
+*.pyc

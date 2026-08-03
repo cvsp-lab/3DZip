@@ -11,6 +11,7 @@ from llava.conversation import conv_templates, SeparatorStyle
 from llava.model.builder import load_pretrained_model
 from llava.utils import disable_torch_init
 from llava.mm_utils import tokenizer_image_token, process_videos, get_model_name_from_path
+from llava.eval.scene_cache import SceneCache, enable_scene_feature_cache, group_by_scene
 
 from PIL import Image
 import math
@@ -38,6 +39,20 @@ def eval_model(args):
     with open(args.question_file, 'r') as file:
         questions = json.load(file)
     questions = get_chunk(questions, args.num_chunks, args.chunk_idx)
+
+    if args.group_by_scene:
+        questions = group_by_scene(questions)
+
+    scene_cache = None
+    if args.scene_cache_capacity > 0:
+        scene_cache = SceneCache(
+            capacity=args.scene_cache_capacity,
+            device=model.device,
+            dtype=torch.bfloat16,
+        )
+    if args.feature_cache:
+        enable_scene_feature_cache(model, capacity=8)
+
     answers_file = os.path.expanduser(args.answers_file)
     os.makedirs(os.path.dirname(answers_file), exist_ok=True)
     ans_file = open(answers_file, "w")
@@ -63,18 +78,27 @@ def eval_model(args):
 
         input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).cuda()
 
-        videos_dict = process_videos(
-            video_path,
-            processor['video'],
-            mode='uniform',
-            device=model.device,
-            text=cur_prompt
-        )
+        if scene_cache is not None:
+            entry = scene_cache.get(video_path, processor['video'], cur_prompt)
+            images_tensor     = entry['images']
+            depths_tensor     = entry['depths']
+            poses_tensor      = entry['poses']
+            intrinsics_tensor = entry['intrinsics']
+        else:
+            videos_dict = process_videos(
+                video_path,
+                processor['video'],
+                mode='uniform',
+                device=model.device,
+                text=cur_prompt
+            )
+            images_tensor     = videos_dict['images'].to(model.device, dtype=torch.bfloat16)
+            depths_tensor     = videos_dict['depths'].to(model.device, dtype=torch.bfloat16)
+            poses_tensor      = videos_dict['poses'].to(model.device,  dtype=torch.bfloat16)
+            intrinsics_tensor = videos_dict['intrinsics'].to(model.device, dtype=torch.bfloat16)
 
-        images_tensor = videos_dict['images'].to(model.device, dtype=torch.bfloat16)
-        depths_tensor = videos_dict['depths'].to(model.device, dtype=torch.bfloat16)
-        poses_tensor = videos_dict['poses'].to(model.device, dtype=torch.bfloat16)
-        intrinsics_tensor = videos_dict['intrinsics'].to(model.device, dtype=torch.bfloat16)
+        # Bind scene id for the feature cache (no-op if the cache isn't installed).
+        model.get_model().get_video_tower().scene_key = video_path
 
 
         torch.cuda.synchronize()
@@ -352,6 +376,15 @@ def eval_model(args):
         at = np.array(video_tower._algo_times)
         print(f"[Algorithm] avg={at.mean():.1f}ms, min={at.min():.1f}ms, max={at.max():.1f}ms, std={at.std():.1f}ms, n={len(at)}")
 
+    if scene_cache is not None:
+        total = scene_cache.hits + scene_cache.misses
+        hit_pct = 100.0 * scene_cache.hits / max(1, total)
+        print(f"[SceneCache] hits={scene_cache.hits}, misses={scene_cache.misses}, hit_ratio={hit_pct:.1f}%")
+    if hasattr(video_tower, 'feature_cache_hits'):
+        total_f = video_tower.feature_cache_hits + video_tower.feature_cache_misses
+        hit_pct_f = 100.0 * video_tower.feature_cache_hits / max(1, total_f)
+        print(f"[FeatureCache] hits={video_tower.feature_cache_hits}, misses={video_tower.feature_cache_misses}, hit_ratio={hit_pct_f:.1f}%")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-path", type=str, default="checkpoints/llava3d-v1.5-7b-task-v3-tuning")
@@ -366,6 +399,18 @@ if __name__ == "__main__":
     parser.add_argument("--top_p", type=float, default=None)
     parser.add_argument("--num_beams", type=int, default=1)
     parser.add_argument("--visualize", action="store_true", help="LLM attention voxel visualization")
+    parser.add_argument("--group-by-scene", action="store_true", default=True,
+                        help="Sort questions by scene so cache hits maximize.")
+    parser.add_argument("--no-group-by-scene", dest="group_by_scene", action="store_false",
+                        help="Preserve the original question order (disables scene grouping).")
+    parser.add_argument("--scene-cache-capacity", type=int, default=2,
+                        help="RGB-D tensor cache: skip disk re-reads for same-scene "
+                             "questions (default on, capacity 2). 0 = disable.")
+    parser.add_argument("--feature-cache", action="store_true", default=False,
+                        help="Per-scene vision-feature cache: run the vision tower "
+                             "once per scene, reuse for the rest (default off).")
+    parser.add_argument("--no-feature-cache", dest="feature_cache", action="store_false",
+                        help="Explicitly disable the per-scene vision-feature cache.")
     args = parser.parse_args()
 
     eval_model(args)

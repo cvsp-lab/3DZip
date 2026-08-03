@@ -21,7 +21,11 @@ export MERGE_CUTOFF=${MERGE_CUTOFF:-5}
 
 mkdir -p pred results
 
-PRED_FILE=./pred/scanqa_${POOLING}_vs${VOXEL_SIZE}_t${TARGET_TOKENS}.json
+if [ "${TARGET_TOKENS}" -gt 0 ]; then
+    PRED_FILE=./pred/scanqa_${POOLING}_vs${VOXEL_SIZE}_t${TARGET_TOKENS}.json
+else
+    PRED_FILE=./pred/scanqa_${POOLING}_vs${VOXEL_SIZE}.json
+fi
 GT_FILE=playground/data/annotations/llava3d_scanqa_val_answer.json
 QUESTION_FILE=playground/data/annotations/llava-3d-scanqa_val_question.json
 

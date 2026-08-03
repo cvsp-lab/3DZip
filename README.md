@@ -115,20 +115,26 @@ Each eval script takes three arguments: `<pooling> <voxel_size> <target_tokens>`
 
 ```bash
 # Baseline (LLaVA-3D native)
-bash scripts/eval/eval_sqa3d.sh native
+CUDA_VISIBLE_DEVICES=0 bash scripts/eval/eval_sqa3d.sh native
 
 # 3DZip with 32 / 64 / 128 target tokens
-bash scripts/eval/eval_sqa3d.sh 3dzip 0.2 32
-bash scripts/eval/eval_sqa3d.sh 3dzip 0.2 64
-bash scripts/eval/eval_sqa3d.sh 3dzip 0.2 128
+CUDA_VISIBLE_DEVICES=0 bash scripts/eval/eval_sqa3d.sh 3dzip 0.2 32
+CUDA_VISIBLE_DEVICES=0 bash scripts/eval/eval_sqa3d.sh 3dzip 0.2 64
+CUDA_VISIBLE_DEVICES=0 bash scripts/eval/eval_sqa3d.sh 3dzip 0.2 128
 ```
 
 Available benchmarks:
 
 ```bash
-bash scripts/eval/eval_sqa3d.sh   <pooling> <voxel_size> <target_tokens>   # SQA3D
-bash scripts/eval/eval_scanqa.sh  <pooling> <voxel_size> <target_tokens>   # ScanQA
+CUDA_VISIBLE_DEVICES=0 bash scripts/eval/eval_sqa3d.sh   <pooling> <voxel_size> <target_tokens>   # SQA3D
+CUDA_VISIBLE_DEVICES=0 bash scripts/eval/eval_scanqa.sh  <pooling> <voxel_size> <target_tokens>   # ScanQA
 ```
+
+### Per-scene feature cache (optional)
+
+For embodied deployments where the same 3D scene is queried many times, pass
+`--feature-cache` to reuse the vision tower's output across queries on the
+same scene. Off by default; preserves model output.
 
 ## 📁 Repository structure
 
