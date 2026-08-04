@@ -31,7 +31,7 @@
 ## 🗺️ Release Plan
 
 - [ ] 3DZip++ — extended version
-- [ ] Paper
+- [x] Paper
 - [x] Inference & evaluation code (LLaVA-3D)
 
 ## ✨ Highlight
