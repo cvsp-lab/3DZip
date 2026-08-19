@@ -20,6 +20,7 @@
   <a href="https://github.com/cvsp-lab/3DZip"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white" alt="Code"></a>
   <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-Coming_Soon-FFD21E?labelColor=555" alt="Hugging Face"></a>
   <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-4caf50" alt="License"></a>
+  <a href="https://github.com/higokri/Awesome-3D-Token-Compression"><img src="https://img.shields.io/badge/Awesome-3D_Token_Compression-2f6fe0?logo=awesomelists&logoColor=white" alt="Awesome 3D Token Compression"></a>
   <a href="https://github.com/cvsp-lab/3DZip/stargazers"><img src="https://img.shields.io/github/stars/cvsp-lab/3DZip?style=social" alt="GitHub stars"></a>
 </p>
 
@@ -155,6 +156,9 @@ same scene. Off by default; preserves model output.
 This code is built upon [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D); we thank the authors for their excellent work.
 The project page uses the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template),
 adapted from [Nerfies](https://nerfies.github.io).
+
+3DZip is part of **[Awesome 3D Token Compression](https://github.com/higokri/Awesome-3D-Token-Compression)** — a curated
+reading list of token pruning / merging methods for 3D multimodal LLMs.
 
 ## 📄 License
 
