@@ -18,7 +18,7 @@
   <a href="https://arxiv.org/abs/2608.01185"><img src="https://img.shields.io/badge/arXiv-2608.01185-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
   <a href="https://paper.pnu-cvsp.com/3DZip/"><img src="https://img.shields.io/badge/%F0%9F%8C%8E_Website-3DZip-4a90d9" alt="Website"></a>
   <a href="https://github.com/cvsp-lab/3DZip"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github&logoColor=white" alt="Code"></a>
-  <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-Coming_Soon-FFD21E?labelColor=555" alt="Hugging Face"></a>
+  <a href="https://huggingface.co/papers/2608.01185"><img src="https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-Paper-FFD21E?labelColor=555" alt="Hugging Face Paper"></a>
   <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-4caf50" alt="License"></a>
   <a href="https://github.com/higokri/Awesome-3D-Token-Compression"><img src="https://img.shields.io/badge/Awesome-3D_Token_Compression-2f6fe0?logo=awesomelists&logoColor=white" alt="Awesome 3D Token Compression"></a>
   <a href="https://github.com/cvsp-lab/3DZip/stargazers"><img src="https://img.shields.io/github/stars/cvsp-lab/3DZip?style=social" alt="GitHub stars"></a>
