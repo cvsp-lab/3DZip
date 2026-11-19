@@ -31,7 +31,6 @@
 
 ## 🗺️ Release Plan
 
-- [ ] 3DZip++ — extended version
 - [x] Paper
 - [x] Inference & evaluation code (LLaVA-3D)
 
@@ -156,9 +155,6 @@ same scene. Off by default; preserves model output.
 This code is built upon [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D); we thank the authors for their excellent work.
 The project page uses the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template),
 adapted from [Nerfies](https://nerfies.github.io).
-
-3DZip is part of **[Awesome 3D Token Compression](https://github.com/higokri/Awesome-3D-Token-Compression)** — a curated
-reading list of token pruning / merging methods for 3D multimodal LLMs.
 
 ## 📄 License
 
