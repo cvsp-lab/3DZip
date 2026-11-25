@@ -155,9 +155,3 @@ same scene. Off by default; preserves model output.
 This code is built upon [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D); we thank the authors for their excellent work.
 The project page uses the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template),
 adapted from [Nerfies](https://nerfies.github.io).
-
-## 📄 License
-
-This project follows the license of [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D), released under
-[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial). The underlying code
-inherits the Apache-2.0 license from LLaVA.
